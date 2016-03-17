@@ -1,23 +1,9 @@
 import express from 'express';
-import http from 'http';
-
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
-import { AppComponent } from './components/app-component.js';
-import { IndexComponent } from './components/pages/index-component.js';
-
-const routes = {
-	path: '',
-	component: AppComponent,
-	childRoutes: [
-		{
-			path: '/',
-			component: IndexComponent
-		}
-	]
-};
+import { routes } from './routes.js';
 
 const app = express();
 
