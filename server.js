@@ -3,13 +3,14 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
-import { routes } from './routes.js';
+import { routes } from './app/routes.js';
 
 const app = express();
 
-app.use(express.static('./public'));
+app.use(express.static('./app/public'));
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/app/views');
 
 app.get('*', (req, res) => {
 	match({ routes, location: req.url }, (err, redirectLocation, props) => {
