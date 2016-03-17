@@ -2,6 +2,7 @@ import { AppComponent } from './components/app-component.js';
 import { IndexComponent } from './components/pages/index-component.js';
 import { AboutComponent } from './components/pages/about-component.js';
 import { ContactComponent } from './components/pages/contact-component.js';
+import { NotFoundComponent } from './components/pages/not-found-component.js';
 
 export const routes = {
 	path: '',
@@ -16,6 +17,9 @@ export const routes = {
 		},{
 			path: '/contact',
 			component: ContactComponent
+		},{
+			path: '*',
+			component: NotFoundComponent
 		}
 	]
 };
